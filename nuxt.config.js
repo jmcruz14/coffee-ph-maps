@@ -2,10 +2,18 @@
 export default defineNuxtConfig({
   preset: 'node-server',
   devtools: { enabled: true },
-  ssr: true,
+  ssr: false,
   spaLoadingTemplate: false,
   srcDir: 'src/',
-  css: ['~/assets/css/main.css'],
+
+  plugins: [
+    // '~/plugins/d3.js'
+  ],
+
+  modules: [
+    '@nuxtjs/tailwindcss'
+  ],
+
   image: {
     dir: 'assets/images',
     screens: {
@@ -19,6 +27,7 @@ export default defineNuxtConfig({
       '3xl': 1920,
     },
   },
+
   app: {
     head: {
       htmlAttrs: {
